@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6DF514A52CD03FD50067826F /* libgmp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF514A32CD03FD50067826F /* libgmp.a */; };
+		6DF514A62CD03FD50067826F /* libgmpxx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF514A42CD03FD50067826F /* libgmpxx.a */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		6D10D48B2CCEBE5400CDA62C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		6D10D48D2CCEBE5400CDA62C /* stanford */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stanford; sourceTree = BUILT_PRODUCTS_DIR; };
+		6DF514A32CD03FD50067826F /* libgmp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgmp.a; path = ../../../../../opt/homebrew/Cellar/gmp/6.3.0/lib/libgmp.a; sourceTree = "<group>"; };
+		6DF514A42CD03FD50067826F /* libgmpxx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgmpxx.a; path = ../../../../../opt/homebrew/Cellar/gmp/6.3.0/lib/libgmpxx.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,6 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DF514A52CD03FD50067826F /* libgmp.a in Frameworks */,
+				6DF514A62CD03FD50067826F /* libgmpxx.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				6D10D48F2CCEBE5400CDA62C /* stanford */,
+				6D71E6EE2CD03765005377AE /* Frameworks */,
 				6D10D48E2CCEBE5400CDA62C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +65,15 @@
 				6D10D48D2CCEBE5400CDA62C /* stanford */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6D71E6EE2CD03765005377AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DF514A32CD03FD50067826F /* libgmp.a */,
+				6DF514A42CD03FD50067826F /* libgmpxx.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,9 +263,18 @@
 		6D10D4952CCEBE5400CDA62C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = stanford/stanford.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JJMQBB24D4;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"/opt/homebrew/opt/gmp/lib\"";
+				HEADER_SEARCH_PATHS = "\"/opt/homebrew/opt/gmp/include/\"";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/opt/gmp/include/,
+					/opt/homebrew/Cellar/gmp/6.3.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -254,9 +282,18 @@
 		6D10D4962CCEBE5400CDA62C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_ENTITLEMENTS = stanford/stanford.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JJMQBB24D4;
 				ENABLE_HARDENED_RUNTIME = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"/opt/homebrew/opt/gmp/lib\"";
+				HEADER_SEARCH_PATHS = "\"/opt/homebrew/opt/gmp/include/\"";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/opt/gmp/include/,
+					/opt/homebrew/Cellar/gmp/6.3.0/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
