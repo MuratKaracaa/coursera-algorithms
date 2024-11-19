@@ -12,9 +12,10 @@
 #include <iostream>
 #include "shortest_path/shortest_path.h"
 #include <vector>
+#include "maintain_median/maintain_median.h"
 
 int main(int argc, const char *argv[]) {
-    std::vector<EdgeWithWeight> edges;
+
 
     std::ifstream file("/Users/karacam/desktop/projects/stanford/stanford/input.txt");
     if (!file.is_open()) {
@@ -22,33 +23,9 @@ int main(int argc, const char *argv[]) {
         return 1;
     }
 
-    std::string line;
+    int median = maintain_median(file);
     
-    while (std::getline(file, line)) {
-        std::istringstream iss(line);
-        int index;
-        iss >> index;
-        index--;
-
-        std::string edgeData;
-        while (iss >> edgeData) {
-            size_t commaPos = edgeData.find(',');
-            if (commaPos != std::string::npos) {
-                int w = std::stoi(edgeData.substr(0, commaPos)) - 1;
-                int weight = std::stoi(edgeData.substr(commaPos + 1));
-                
-                EdgeWithWeight edge = {index, w, weight};
-
-                edges.push_back(edge);
-            }
-        }
-    }
-
-    file.close();
-    
-    std::string result = get_shortest_path(edges);
-    
-    std::cout << result << "\n";
+    std::cout << median << "\n";
 
     return 0;
 }
