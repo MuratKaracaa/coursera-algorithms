@@ -11,6 +11,7 @@
 #include <set>
 #include <algorithm>
 
+// TODO refactor this to use priority queue instead
 std::string get_shortest_path(std::vector<EdgeWithWeight>& edges) {
     std::vector<int> distances(200);
     for(int i = 0;i<distances.size();i++){

@@ -10,9 +10,10 @@
 #include <string>
 #include <ostream>
 #include <iostream>
-#include "shortest_path/shortest_path.h"
 #include <vector>
-#include "maintain_median/maintain_median.h"
+#include "two_sum/two_sum.h"
+#include <set>
+
 
 int main(int argc, const char *argv[]) {
 
@@ -22,10 +23,21 @@ int main(int argc, const char *argv[]) {
         std::cerr << "Error: Unable to open file." << std::endl;
         return 1;
     }
-
-    int median = maintain_median(file);
     
-    std::cout << median << "\n";
+    std::set<int> myset = {1,2,3,4,5,6,7,8};
+    
+    int low = 12, high = 10;
+    auto start = myset.lower_bound(low);
+    auto end = myset.upper_bound(high);
+
+    for (auto it = start; it != end; ++it) {
+        std::cout << *it << " ";
+    }
+
+
+    int size = two_sum(file);
+    
+    std::cout << size << "\n";
 
     return 0;
 }
