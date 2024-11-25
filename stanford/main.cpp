@@ -5,15 +5,10 @@
 //  Created by Murat Karaca on 10/27/24.
 //
 
-#include <fstream>
-#include <sstream>
-#include <string>
-#include <ostream>
-#include <iostream>
-#include <vector>
-#include "two_sum/two_sum.h"
-#include <set>
 
+#include "clustering/clustering.h"
+#include <fstream>
+#include <iostream>
 
 int main(int argc, const char *argv[]) {
 
@@ -24,20 +19,9 @@ int main(int argc, const char *argv[]) {
         return 1;
     }
     
-    std::set<int> myset = {1,2,3,4,5,6,7,8};
+    int sum = clustering_with_hamming_distance(file);
     
-    int low = 12, high = 10;
-    auto start = myset.lower_bound(low);
-    auto end = myset.upper_bound(high);
-
-    for (auto it = start; it != end; ++it) {
-        std::cout << *it << " ";
-    }
-
-
-    int size = two_sum(file);
-    
-    std::cout << size << "\n";
+    std::cout << "mst:" << sum << "\n";
 
     return 0;
 }
