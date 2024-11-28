@@ -31,6 +31,7 @@ void dfsWithLeader(std::vector<Vertex>& actualGraph, Vertex& startingVertex ,int
     }
 }
 
+// in the input file, edges are directed, reversed graph would be, while reading the file second item -> first item and actual one first item -> second item
 std::map<int, std::vector<int>> scc(std::vector<Vertex>& actualGraph, std::vector<Vertex>& reversedGraph){
     std::vector<int> finishindOrder;
     std::map<int, std::vector<int>> connectedGrapgs;

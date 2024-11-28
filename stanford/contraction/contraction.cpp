@@ -39,7 +39,7 @@ void makeUnion(std::vector<Edge>& adjacencyList, int replacer, int replaced){
     );
 }
 
-
+// input file, in each line has vertex key as first item, and subsequent ones the edges from/to this vertex, total 200 lines
 int contraction(std::vector<Edge>& adjacencyList, int vertexCount){
     
     while(vertexCount > 2){

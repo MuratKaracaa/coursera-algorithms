@@ -11,6 +11,7 @@
 #include <unordered_set>
 #include <iostream>
 
+// finds unique x+y where sum is between -10000 and 10000
 int two_sum(std::ifstream& file){
     std::set<long> sorted;
     std::unordered_set<long> unsorted;

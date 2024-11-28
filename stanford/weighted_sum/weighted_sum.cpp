@@ -27,6 +27,7 @@ struct Comparator {
     }
 };
 
+// the input file can be used both with weight / length and weight - length, score can be set either way
 long long weighted_sum(std::ifstream& file){
     std::priority_queue<Job,std::vector<Job> ,Comparator> job_queue;
     

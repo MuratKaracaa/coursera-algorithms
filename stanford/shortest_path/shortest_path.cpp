@@ -12,6 +12,7 @@
 #include <algorithm>
 
 // TODO refactor this to use priority queue instead
+// in the input file, each line, first one is vertex key, subsequent numbers are key,weight format
 std::string get_shortest_path(std::vector<EdgeWithWeight>& edges) {
     std::vector<int> distances(200);
     for(int i = 0;i<distances.size();i++){

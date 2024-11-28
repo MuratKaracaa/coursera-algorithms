@@ -7,6 +7,7 @@
 
 #include "count_inversions.h"
 
+// input file is just a list of items, get rid of this InversionCount struct as well, not needed and time wasting
 InversionCount count_inversions(const InversionCount& obj){
     int arraySize = obj.vectorToCount.size();
     if(arraySize > 1){

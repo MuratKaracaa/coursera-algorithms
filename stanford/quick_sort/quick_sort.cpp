@@ -1,7 +1,7 @@
 #include "quick_sort.h"
 #include <vector>
 
-
+// input file is just a bunch of integers
 void quick_sort(std::vector<int>& array, int left, int right, long long& comparisonCount, ComparisonType comparisonType) {
     if (right >= left) {
         int pivotIndex = left;
