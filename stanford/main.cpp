@@ -7,6 +7,7 @@
 
 
 #include "clustering/clustering.h"
+#include "huffman/mwis.h"
 #include <fstream>
 #include <iostream>
 
@@ -19,9 +20,7 @@ int main(int argc, const char *argv[]) {
         return 1;
     }
     
-    int sum = clustering_with_hamming_distance(file);
-    
-    std::cout << "mst:" << sum << "\n";
+    mwis(file);
 
     return 0;
 }
