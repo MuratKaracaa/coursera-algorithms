@@ -6,8 +6,7 @@
 //
 
 
-#include "clustering/clustering.h"
-#include "huffman/mwis.h"
+#include "knapsack/knapsack.h"
 #include <fstream>
 #include <iostream>
 
@@ -20,7 +19,9 @@ int main(int argc, const char *argv[]) {
         return 1;
     }
     
-    mwis(file);
+    int res = knapsack(file);
+    
+    std::cout << res << "\n";
 
     return 0;
 }
