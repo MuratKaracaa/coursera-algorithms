@@ -6,20 +6,20 @@
 //
 
 
-#include "bellman_ford/bellman_ford.h"
+#include "tsp/tsp_heuristic.h"
 #include <fstream>
 #include <iostream>
 
 int main(int argc, const char *argv[]) {
 
 
-    std::ifstream file("/Users/karacam/desktop/projects/stanford/stanford/input2.txt");
+    std::ifstream file("/Users/karacam/desktop/projects/stanford/stanford/input.txt");
     if (!file.is_open()) {
         std::cerr << "Error: Unable to open file." << std::endl;
         return 1;
     }
     
-    int res = bellman_ford(file);
+    int res = tsp_heuristic(file);
     
     std::cout << res << "\n";
 
