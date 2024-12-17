@@ -6,20 +6,20 @@
 //
 
 
-#include "tsp/tsp_heuristic.h"
+#include "papadimitrou/papadimitrou.h"
 #include <fstream>
 #include <iostream>
 
 int main(int argc, const char *argv[]) {
 
 
-    std::ifstream file("/Users/karacam/desktop/projects/stanford/stanford/input.txt");
+    std::ifstream file("/Users/karacam/desktop/projects/stanford/stanford/input6.txt");
     if (!file.is_open()) {
         std::cerr << "Error: Unable to open file." << std::endl;
         return 1;
     }
     
-    int res = tsp_heuristic(file);
+    int res = papadimitrou(file);
     
     std::cout << res << "\n";
 
